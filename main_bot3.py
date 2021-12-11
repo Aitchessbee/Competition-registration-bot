@@ -4,7 +4,7 @@ import urllib.parse as up
 import psycopg2
 
 up.uses_netloc.append("postgres")
-url = up.urlparse("postgres://qonqznsc:oxIeM1VBXNBJoxhUQI74mD07D3-cNzXP@arjuna.db.elephantsql.com:5432/qonqznsc")
+url = up.urlparse("link")
 conn = psycopg2.connect(database=url.path[1:],
 user=url.username,
 password=url.password,
@@ -36,7 +36,7 @@ async def register(ctx, msg1, msg2):
                         conn.commit()
                         await ctx.author.send("Registration successful")
                         
-                        target_server_id = 743411642699612251
+                        target_server_id = SERVER_ID
                         target_role_id = D[msg2]
                         target_server = client.get_guild(target_server_id)
                         author_id = ctx.author.id
@@ -57,4 +57,4 @@ async def register(ctx, msg1, msg2):
         except:
             pass
 
-client.run('NzQ0MDc3NDYyNDEyOTg0MzMw.Xzd-Iw.riHbpkGfI-eEazgNT2MH0_yiGAQ')
+client.run('token')
